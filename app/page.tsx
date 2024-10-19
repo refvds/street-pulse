@@ -1,6 +1,7 @@
 import { Section } from "@/components/shared/section";
 import { Swiper } from "@/components/shared/sliders";
 import { ColumnSlide } from "@/components/shared/sliders/column-silider";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -24,6 +25,14 @@ export default function Home() {
           <div className="col-span-3 row-span-3 col-start-4 row-start-4 "> <img src="/assets/45.png"className="object-cover w-full h-full" alt="" /></div>
       </div>
       </Section>
+      <div className="mt-24 flex w-full">
+        <div className="bg-[url('/assets/3.png')] bg-no-repeat bg-cover text-white py-56 px-32 max-w-[720px]">
+          <h3 className="text-3xl uppercase leading-10 font-bold mb-8">We made your everyday fashion better!</h3>
+          <p className="mb-12">In our journey to improve everyday fashion, euphoria presents EVERYDAY wear range - Comfortable & Affordable fashion 24/7</p>
+          <Button variant='secondary' className="w-[164px]">Shop Now</Button>
+        </div>
+        <img src="/assets/32.png" alt="" className="object-cover flex-1"/>
+      </div>
     </>
   );
 }
