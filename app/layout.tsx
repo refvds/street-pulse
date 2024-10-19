@@ -16,9 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="max-w-[1448px] mx-auto bg-pink-300">
+      <body className="max-w-[1448px] mx-auto">
         <Header />
-        {children}
+        <main className="min-h-screen">
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -10,19 +10,19 @@ import { Heart, ShoppingCart, UserRound } from 'lucide-react'
 
 export const Header = () => {
   return (
-    <header className='max-w-7xl mx-auto py-7 bg-white text-lg'>
-        <nav className='flex items-center justify-between gap-8'>
-            <Logo className='mr-20 '/>
-            <ul className='flex gap-10 items-center '>
-                {navLinks.map(({title, path},index)=><Link key={`${title} ${index}`} href={path}>{title}</Link>)}
-            </ul>
-            <SearchInput className='bg-gray-200 h-8 w-60 flex-1' placeholder='search'/>
-            <div className='flex gap-3'>
-                <IconButton icon={Heart }/>
-                <IconButton icon={UserRound  } />
-                <IconButton icon={ShoppingCart} />
-            </div>
-        </nav>
+    <header className='max-w-[1237px] mx-auto flex items-center py-4'>
+      <Logo className='mr-[87.84px]'/>
+      <nav className='flex space-x-[40px]'>
+      {navLinks.map(({title, path},index)=><Link key={`${title} ${index}`} href={path}>{title}</Link>)}
+      </nav>
+      <div className="ml-[76px]">
+        <SearchInput className='w-52' placeholder='search'/>
+      </div>
+      <div className='ml-auto flex space-x-[12px]'>
+        <IconButton icon={Heart }/>
+        <IconButton icon={UserRound  } />
+        <IconButton icon={ShoppingCart} />
+      </div>
     </header>
   )
 }
