@@ -19,9 +19,8 @@ export const Section: FC<PropsWithChildren<IProps>> = ({
           before:content-[''] 
           before:absolute 
           before:left-0 
-          before:top-1/2 
-          before:-translate-y-1/2 
-          before:w-1 
+          before:top-0 
+          before:w-[6px] 
           before:h-10 
           before:bg-purple-500 
           before:rounded-full 
@@ -29,6 +28,7 @@ export const Section: FC<PropsWithChildren<IProps>> = ({
           text-4xl 
           font-bold 
           text-gray-500
+          capitalize
       "
       >
         {title}

@@ -8,6 +8,7 @@ interface IProps {
   iconSize?: number;
   onClick?: VoidFunction;
   iconClassName?: string;
+  variant?: 'outline' | 'ghost' | 'secondary';
 }
 
 const IconButton: FC<IProps> = ({
@@ -15,12 +16,13 @@ const IconButton: FC<IProps> = ({
   icon: Icon,
   iconClassName,
   iconSize,
+  variant = 'secondary',
   onClick,
 }) => {
   return (
     <Button
       className={className}
-      variant='outline'
+      variant={variant}
       onClick={onClick}
       size='icon'
     >
