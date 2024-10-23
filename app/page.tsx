@@ -6,7 +6,7 @@ import { ColumnSlide } from '@/components/shared/sliders/column-silider';
 import { Button } from '@/components/ui/button';
 import { MoveRight } from 'lucide-react';
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <Swiper className='mt-8' />
