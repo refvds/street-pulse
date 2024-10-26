@@ -32,15 +32,18 @@ model ProductImage {
 }
 
 model Category {
-    id       Int       @id @default(autoincrement())
-    name     String
-    products Product[]
+    id         Int            @id @default(autoincrement())
+    name       String
+    products   Product[]
+    audienceId Int
+    audience   TargetAudience @relation(fields: [audienceId], references: [id])
 }
 
 model TargetAudience {
-    id       Int       @id @default(autoincrement())
-    name     String
-    products Product[]
+    id         Int        @id @default(autoincrement())
+    name       String
+    products   Product[]
+    categories Category[]
 }
 
 model ProductSize {

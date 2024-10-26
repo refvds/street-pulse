@@ -1,21 +1,21 @@
-'use client';
-
-import React from 'react';
-import { Logo } from './logo';
-import { navLinks } from '@/constants/header';
 import Link from 'next/link';
+import { Heart, ShoppingCart, UserRound } from 'lucide-react';
+import { prisma } from '@/prisma/prisma-client';
+import { Logo } from './logo';
 import { SearchInput } from './search-input';
 import IconButton from './icon-button';
-import { Heart, ShoppingCart, UserRound } from 'lucide-react';
 
-export const Header = () => {
+export const Header = async () => {
+  const nav = await prisma.targetAudience.findMany();
   return (
     <header className='max-w-[1237px] mx-auto flex items-center py-4'>
-      <Logo className='mr-[87.84px]' />
+      <Link href='/'>
+        <Logo className='mr-[87.84px]' />
+      </Link>
       <nav className='flex space-x-[40px]'>
-        {navLinks.map(({ title, path }, index) => (
-          <Link key={`${title} ${index}`} href={path}>
-            {title}
+        {nav?.map(({ name, id }) => (
+          <Link key={id} href={`/${name.toLowerCase()}`}>
+            {name}
           </Link>
         ))}
       </nav>
