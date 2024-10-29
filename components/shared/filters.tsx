@@ -20,8 +20,12 @@ export const Filters: FC<IProps> = async ({ className }) => {
   });
 
   return (
-    <aside className={clsx('w-60 border-gray-400 border px-5 py-8', className)}>
-      <h2>Filters</h2>
+    <aside
+      className={clsx(
+        'w-60 border-gray-400 border-r border-r-gray-200 px-5 py-8',
+        className,
+      )}
+    >
       <FilterAccordion title='Categories'>
         <ul className='flex flex-col gap-4'>
           {categories?.map((category) => (

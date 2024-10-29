@@ -21,8 +21,8 @@ export const ShowcaseCard: FC<IProps> = ({
   favorite = false,
 }) => {
   return (
-    <article className={clsx('max-w-72 relative', className)}>
-      <img className=' rounded-md ' src={image} alt='category image' />
+    <article className={clsx('max-w-72 relative rounded-md ', className)}>
+      <img className='w-full' src={image} alt='category image' />
       {favorite && (
         <IconButton
           icon={Heart}
