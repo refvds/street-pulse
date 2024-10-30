@@ -1,8 +1,8 @@
 import { BrandBanner } from '@/components/shared/brand-banner';
 import { ShowcaseCard } from '@/components/shared/showcase-card';
 import { Section } from '@/components/shared/section';
-import { Swiper } from '@/components/shared/sliders';
-import { ColumnSlide } from '@/components/shared/sliders/column-silider';
+import { Swiper } from '@/components/shared/swiper';
+import { ColumnSlide } from '@/components/shared/swiper/column-silider';
 import { Button } from '@/components/ui/button';
 import { MoveRight } from 'lucide-react';
 
