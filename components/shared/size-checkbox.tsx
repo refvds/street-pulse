@@ -20,7 +20,7 @@ export const SizeCheckbox: FC<IProps> = ({ className, size }) => {
   };
 
   return (
-    <div className={clsx('relative', className)}>
+    <div className={clsx('relative')}>
       <Checkbox
         className='hidden peer'
         id={size}
@@ -28,8 +28,10 @@ export const SizeCheckbox: FC<IProps> = ({ className, size }) => {
         onClick={handleCheckboxClick}
       />
       <label
-        className='flex items-center justify-center w-full h-full text-gray-700 bg-gray-200 border-2 border-gray-300 rounded-md cursor-pointer
-                  peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-500 transition-colors duration-300 uppercase'
+        className={clsx(
+          'flex items-center justify-center text-gray-700 bg-gray-200 border-2 border-gray-300 rounded-md cursor-pointer peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-500 transition-colors duration-300 uppercase',
+          className,
+        )}
         htmlFor={size}
       >
         {size}
