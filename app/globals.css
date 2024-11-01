@@ -64,3 +64,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+.icon-button {
+  @apply bg-white transition-all ease-out duration-300;
+}
+
+.icon-button > svg {
+  @apply text-black;
+}
+
+.icon-button:hover > svg {
+  @apply w-7 h-7 fill-pink-500 stroke-pink-500;
+}

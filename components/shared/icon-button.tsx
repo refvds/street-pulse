@@ -4,10 +4,10 @@ import { Heart } from 'lucide-react';
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  icon: typeof Heart;
-  iconSize?: number;
-  onClick?: VoidFunction;
   iconClassName?: string;
+  iconSize?: number;
+  icon: typeof Heart;
+  onClick?: VoidFunction;
   variant?: 'outline' | 'ghost' | 'secondary';
 }
 
@@ -15,8 +15,8 @@ const IconButton = forwardRef<HTMLButtonElement, IProps>(
   (
     {
       className,
-      icon: Icon,
       iconClassName,
+      icon: Icon,
       iconSize,
       variant = 'secondary',
       onClick,

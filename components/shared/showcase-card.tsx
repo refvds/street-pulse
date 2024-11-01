@@ -1,14 +1,16 @@
+'use client';
+
+import { FC, ReactNode, useState } from 'react';
 import clsx from 'clsx';
-import React, { FC, ReactNode } from 'react';
-import IconButton from './icon-button';
 import { Heart } from 'lucide-react';
+import IconButton from './icon-button';
 
 interface IProps {
   className?: string;
   title: string;
   image: string;
   rightButton: ReactNode;
-  favorite?: boolean;
+  wishes?: boolean;
   subTitle?: string;
 }
 
@@ -18,17 +20,31 @@ export const ShowcaseCard: FC<IProps> = ({
   image,
   rightButton,
   subTitle,
-  favorite = false,
+  wishes = false,
 }) => {
+  const [isActive, setIsActive] = useState(false);
+
+  const handledWishedClick = () => {
+    setIsActive((prev) => !prev);
+  };
+
   return (
     <article className={clsx('max-w-72 relative rounded-md ', className)}>
       <img className='w-full' src={image} alt='category image' />
-      {favorite && (
+      {wishes && (
         <IconButton
           icon={Heart}
-          className='absolute top-3 right-2 rounded-full'
+          className={`icon-button absolute top-3 right-2 rounded-full hover:bg-transparent hover:border-none ${
+            isActive ? '!bg-transparent border-none' : 'bg-white'
+          } `}
+          iconClassName={`${
+            isActive
+              ? '!w-7 !h-7 fill-pink-500 stroke-pink-500'
+              : 'w-6 h-6 text-black'
+          }`}
           iconSize={20}
           variant='outline'
+          onClick={handledWishedClick}
         />
       )}
       <div className='mt-4 flex justify-between items-center'>
