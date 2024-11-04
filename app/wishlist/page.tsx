@@ -1,3 +1,4 @@
+import { EmptyView } from '@/components/shared/empty-view';
 import { WishlistItem } from '@/components/shared/wishlist-item';
 import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
@@ -54,7 +55,6 @@ export default function WishlistPage() {
       {data.length ? (
         <section className='mt-10 max-w-[903px] mx-auto'>
           <h2 className='font-bold text-3xl text-gray-500 mb-12'>Wishlist</h2>
-
           <ul className='max-h-[680px] px-5 overflow-y-scroll flex flex-col gap-3  '>
             {data?.map((item) => (
               <li key={item.id}>
@@ -70,25 +70,12 @@ export default function WishlistPage() {
           </ul>
         </section>
       ) : (
-        <section className='mt-10 max-w-[459px] mx-auto flex flex-col items-center'>
-          <Image
-            src='assets/svgs/wishlist.svg'
-            width={400}
-            height={400}
-            alt='wishlist picture'
-          />
-          <h2 className='mt-16 font-bold text-4xl'>Your wishlist is empty</h2>
-          <p className='mt-2 text-center text-[#807D7E] text-md'>
-            You don't have any products in the wishlist yet. You will find a lot
-            of interesting products on out Shop page
-          </p>
-          <Link
-            className='flex items-center mt-11 w-60 h-11 text-white bg-black px-12 py-3 rounded-lg'
-            href='/'
-          >
-            Continue Shopping
-          </Link>
-        </section>
+        <EmptyView
+          image='assets/svgs/wishlist.svg'
+          title='Your wishlist is empty'
+          description="You don't have any products in the wishlist yet. You will find a lot
+            of interesting products on out Shop page"
+        />
       )}
     </>
   );
