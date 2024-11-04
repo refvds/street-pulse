@@ -148,28 +148,28 @@ export default async function Home() {
             title='black sweatshirt with long sleeves'
             subTitle="MMS' band"
             rightButton={<Button variant='secondary'>$1234</Button>}
-            favorite
+            wishes
           />
           <ShowcaseCard
             image='assets/72.png'
             title='black sweatshirt with long sleeves'
             subTitle="MMS' band"
             rightButton={<Button variant='secondary'>$1234</Button>}
-            favorite
+            wishes
           />
           <ShowcaseCard
             image='assets/73.png'
             title='black sweatshirt with long sleeves'
             subTitle="MMS' band"
             rightButton={<Button variant='secondary'>$1234</Button>}
-            favorite
+            wishes
           />
           <ShowcaseCard
             image='assets/74.png'
             title='black sweatshirt with long sleeves'
             subTitle="MMS' band"
             rightButton={<Button variant='secondary'>$1234</Button>}
-            favorite
+            wishes
           />
         </div>
       </Section>
