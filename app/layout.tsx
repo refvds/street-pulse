@@ -13,13 +13,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang='en'>
       <body className='max-w-[1448px] mx-auto'>
         <Header />
         <main className='min-h-screen'>{children}</main>
-        <Footer className='mt-24 rounded-md' />
+        <Footer className='rounded-md' />
       </body>
     </html>
   );
