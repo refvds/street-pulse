@@ -1,8 +1,10 @@
+import { notFound } from 'next/navigation';
 import { Filters } from '@/components/shared/filters';
 import { ProductCatalog } from '@/components/shared/product-catalog';
 import { Button } from '@/components/ui/button';
+import { prisma } from '@/prisma/prisma-client';
 
-export default function AudiencePage({
+export default async function AudiencePage({
   params,
 }: {
   params: { audience: string };
@@ -13,6 +15,17 @@ export default function AudiencePage({
       : params.audience.endsWith('s')
       ? `${params.audience} clothing`
       : `${params.audience}'s clothing`;
+  const nav = await prisma.targetAudience.findMany();
+  console.log(nav);
+  if (
+    !nav.some(
+      (audience) =>
+        audience.name.toLocaleLowerCase() ===
+        params.audience.toLocaleLowerCase(),
+    )
+  ) {
+    notFound();
+  }
 
   return (
     <section className=' max-w-[1237px] mx-auto flex'>
